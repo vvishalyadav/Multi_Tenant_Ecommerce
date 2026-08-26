@@ -55,7 +55,7 @@ const Navbar = ()=>{
                     funroad
                 </span>
             </Link>        
-            <NavbarSidebar></NavbarSidebar>    
+            <NavbarSidebar items={NavbarItems} open={isSidebarOpen} onOpenChange={setIsSideBarOpen}></NavbarSidebar>    
             <div className="items-center gap-4 hidden lg:flex ">
                 {NavbarItems.map((items)=><NavbarItem key={items.href} href={items.href} children={items.children} isActive={items.href===pathname}/>)}
             </div>
@@ -68,7 +68,7 @@ const Navbar = ()=>{
                 </Button>
             </div>
             <div className="flex lg:hidden items-center justify-center ">
-                <Button variant="ghost" className={" h-full bg-white size-12 px-10"}>
+                <Button variant="ghost" className={" h-full bg-white size-12 px-10"} onClick={()=>setIsSideBarOpen(true)}>
                     <MenuIcon/>
                 </Button>
             </div>
