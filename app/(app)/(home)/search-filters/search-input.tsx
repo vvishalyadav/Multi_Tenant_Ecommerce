@@ -14,9 +14,9 @@ export const SearchInput = ({disabled}:props)=>{
                 <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-neutral-500"/>
                 <Input className="pl-8" placeholder="Search Products" disabled={disabled}/>
             </div>
-            <Button className={"size-12 shrink-0 flex lg:hidden"}>
+            {/* <Button className={"size-12 shrink-0 flex lg:hidden"}>
                 <ListFilterIcon/>
-            </Button>
+            </Button> */}
         </div>
     )
 }
