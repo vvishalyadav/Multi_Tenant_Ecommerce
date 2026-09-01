@@ -5,6 +5,7 @@ import configPromise from '@payload-config'
 import { getPayload } from "payload";
 import { SearchFilter } from "./search-filters";
 import { Category } from "@/payload-types";
+import { CustomCategory } from "./types";
 // import { CustomCategory } from "./types";
 
 interface Props{
@@ -21,6 +22,7 @@ const Layout = async ({children}:Props)=>{
     collection:'categories',
     depth:1,
     pagination:false,
+    sort:"name",
     where:{
       parent:{
         exists:false
@@ -28,7 +30,7 @@ const Layout = async ({children}:Props)=>{
     }
   });
 
-  const formattedData = data.docs.map((doc)=>({
+  const formattedData:CustomCategory[] = data.docs.map((doc)=>({
     ...doc,
     subcategories:(doc.subcategories?.docs??
     []).map((doc)=>({
@@ -45,7 +47,8 @@ const Layout = async ({children}:Props)=>{
       <Navbar></Navbar>
       <SearchFilter data={formattedData}/>
       {children}
-      {/* <div>data:{JSON.stringify(data,null,2)}<br/><br/></div>
+      {/* <br/><br/>
+      <div>data:{JSON.stringify(data,null,2)}<br/><br/></div>
       <div>Formatted Data: {JSON.stringify(formattedData,null,2)}</div> */}
     </div>
   )
