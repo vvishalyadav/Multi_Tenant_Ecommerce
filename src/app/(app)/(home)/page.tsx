@@ -41,3 +41,6 @@ export default async function Home() {
     </div>
   );
 }
+
+
+// import type { SearchParams } from "nuqs/server"
