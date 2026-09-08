@@ -15,6 +15,7 @@ export const useDropdownPosition = (
 
         if(left+dropdownWidth>window.innerWidth){
             left = rect.right + window.scrollX - dropdownWidth;
+            
 
             if(left<0){
                 left =  window.innerWidth - dropdownWidth -16;

@@ -5,40 +5,43 @@
 // import { Textarea } from "@/app/(app)/components/ui/textarea";
 // import { Progress } from "@/app/(app)/components/ui/progress";
 
-import configPromise from '@payload-config'
-import { getPayload } from "payload";
+// import configPromise from '@payload-config'
+// import { getPayload } from "payload";
 
 export default async function Home() {
 
-  const payload = await getPayload({
-    config:configPromise
-  })
+  // const payload = await getPayload({
+  //   config:configPromise
+  // })
 
-  const data = await payload.find({
-    collection:'categories',
-    depth:1,
-    where :{
-      parent:{
-        exists:false
-      }
-    }
-  });
+  // const data = await payload.find({
+  //   collection:'categories',
+  //   depth:1,
+  //   where :{
+  //     parent:{
+  //       exists:false
+  //     }
+  //   }
+  // });
 
-  console.log(data);
+  // console.log(data);
 
   return (
-    <div className="flex flex-col gap-y-5 bg-zinc-50 h-full">
-
-      {/* <div>{JSON.stringify(data,null,2)}</div>
-
-
-      <Button variant="elevated" className={'p-6 text-lg w-sm'}>I am a Button</Button>
-      <Input placeholder="I am a input"  className="p-2  w-sm h-10 "/>
-      <Progress value={50} className={'w-sm'}/>
-
-      <Textarea className="w-sm "></Textarea>
-      <Checkbox className={' size-5'}></Checkbox> */}
+    <div>
+      Home Page
     </div>
+    // <div className="flex flex-col gap-y-5 bg-zinc-50 h-full">
+
+    //    <div>{JSON.stringify(data,null,2)}</div>
+
+
+    //   <Button variant="elevated" className={'p-6 text-lg w-sm'}>I am a Button</Button>
+    //   <Input placeholder="I am a input"  className="p-2  w-sm h-10 "/>
+    //   <Progress value={50} className={'w-sm'}/>
+
+    //   <Textarea className="w-sm "></Textarea>
+    //   <Checkbox className={' size-5'}></Checkbox> 
+    // </div>
   );
 }
 

@@ -26,7 +26,7 @@ const Layout = async ({children}:Props)=>{
     where:{
       parent:{
         exists:false
-      }
+      } 
     }
   });
 
@@ -40,7 +40,7 @@ const Layout = async ({children}:Props)=>{
   }))
 
 
-  
+
 
   return(
     <div className="flex flex-col min-h-screen">

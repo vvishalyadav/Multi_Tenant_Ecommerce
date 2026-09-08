@@ -21,7 +21,7 @@ export const SubcategoryMenu = ({
         return null;
     }
 
-    const backgroundColor = category.color || "f5f5f5";
+    const backgroundColor = category.color || "#f5f5f5";
 
 
     return(
@@ -44,7 +44,7 @@ export const SubcategoryMenu = ({
                 {category.subcategories?.map((subcategory:Category)=>(
                     <Link 
                     key={subcategory.slug} 
-                    href={subcategory.slug}
+                    href={`/${category.slug}/${subcategory.slug}`}
                     className={cn("w-full text-left p-4 hover:bg-black hover:text-white justify-between",
                         "items-center font-medium underline")}
                     >{subcategory.name}</Link>
