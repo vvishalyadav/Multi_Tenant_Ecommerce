@@ -1,8 +1,11 @@
+"use client"
+
 import { Input } from "@/src/app/(app)/components/ui/input";
 import { ListFilterIcon, SearchIcon } from "lucide-react"
 import { CustomCategory } from "../types";
 import { useState } from "react";
 import { Button } from "../../components/ui/button";
+
 
 
 interface props{
@@ -25,7 +28,7 @@ export const SearchInput = ({disabled,data}:props)=>{
             </div>
             <Button
             variant={"elevated"}
-            className={'size-12 shrink-0 flex lg:hidden'}
+            className={'size-12 shrink-0 flex lg:hidden'}   
             onClick={()=>setIsSidebarOpen(true)}            
             >
                 <ListFilterIcon/>

@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { CustomCategory } from "../types";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../../components/ui/sheet";
