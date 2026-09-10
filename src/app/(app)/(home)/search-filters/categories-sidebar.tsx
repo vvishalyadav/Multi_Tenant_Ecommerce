@@ -5,23 +5,28 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../../components/u
 import { ScrollArea } from "../../components/ui/scroll-area";
 import { Button } from "../../components/ui/button";
 import { ChevronLeftIcon, ChevronsRightIcon } from "lucide-react";
+import { useTRPC } from "@/src/trpc/client";
+import {useQuery} from "@tanstack/react-query"
+import { CategoriesGetManyOutput } from "@/src/modules/types";
 
 interface Props{
     open:boolean;
     onOpenChange:(open:boolean)=>void;
-    data:CustomCategory[]
 };
 
 export const CategoriesSidebar = ({
     open,
     onOpenChange,
-    data
 }:Props)=>{
     
+    const trpc = useTRPC();
+    const {data} = useQuery(trpc.categories.getMany.queryOptions());
+
+
     const router = useRouter();
 
-    const [parentCategories,setParentCategories] = useState<CustomCategory[]|null>(null)
-    const [selectedCategory,setSelectedCategory] = useState<CustomCategory|null>(null)
+    const [parentCategories,setParentCategories] = useState<CategoriesGetManyOutput|null>(null)
+    const [selectedCategory,setSelectedCategory] = useState<CategoriesGetManyOutput[1]|null>(null)
 
     const currentCategories = parentCategories ?? data ?? [];
 
@@ -31,9 +36,9 @@ export const CategoriesSidebar = ({
         onOpenChange(open);
     };
 
-    const handleCategoryClick = (Category:CustomCategory)=>{
+    const handleCategoryClick = (Category:CategoriesGetManyOutput[1])=>{
         if(Category.subcategories && Category.subcategories.length>0){
-            setParentCategories(Category.subcategories as CustomCategory[]);
+            setParentCategories(Category.subcategories as CategoriesGetManyOutput);
             setSelectedCategory(Category);
         }else{
 
@@ -61,12 +66,15 @@ export const CategoriesSidebar = ({
     const backgroundColor = selectedCategory?.color || "white"; 
 
     return(
-        <Sheet>
-            <SheetContent>
-                <SheetHeader>
+        <Sheet open={open} onOpenChange={handleOpenChange}>
+            <SheetContent side="left"
+            className={"p-0 transition-none"}
+            style={{backgroundColor}}
+            >
+                <SheetHeader className="p-4 border-b">
                     <SheetTitle>Categories</SheetTitle>
                 </SheetHeader>
-                <ScrollArea>
+                <ScrollArea className={"flex flex-col overflow-y-auto h-full pb-2"}>
                     {
                         parentCategories && (
                             <button

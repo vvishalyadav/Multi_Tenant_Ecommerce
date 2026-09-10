@@ -12,10 +12,11 @@ import { useEffect, useRef, useState } from "react"
 import { CategoriesSidebar } from "./categories-sidebar"
 import { ListFilterIcon } from "lucide-react"
 import { cn } from "../../lib/utils"
+import { CategoriesGetManyOutput } from "@/src/modules/types"
 
 
 interface Props{
-    data:CustomCategory[]
+    data:CategoriesGetManyOutput
 }
 
 export const Categories = ({
@@ -75,7 +76,7 @@ export const Categories = ({
     return (
         <div className="relative w-full">
 
-            <CategoriesSidebar open={isSidebarOpen} onOpenChange={setIsSidebarOpen} data={data}/>
+            <CategoriesSidebar open={isSidebarOpen} onOpenChange={setIsSidebarOpen}/>
 
             <div
             ref={measureRef}
