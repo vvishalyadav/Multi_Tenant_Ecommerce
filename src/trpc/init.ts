@@ -15,7 +15,7 @@ export const createTRPCContext = cache(async ()=>{
 
 
 const t = initTRPC.create({
-
+    transformer:superjson,
 });
 
 // const t = initTRPC

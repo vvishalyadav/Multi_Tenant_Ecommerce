@@ -64,7 +64,7 @@ const Navbar = ()=>{
                     <Link href="/sign-in">Login</Link>
                 </Button>
                 <Button variant={"secondary"} className={"h-full bg-white rounded-none border-l-black hover:text-white hover:bg-black px-10 transition-colors text-lg"}>
-                    <Link href="/sign-up">Start Selling</Link>
+                    <Link prefetch href="/sign-up">Start Selling</Link>
                 </Button>
             </div>
             <div className="flex lg:hidden items-center justify-center ">
