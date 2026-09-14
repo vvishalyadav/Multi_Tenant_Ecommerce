@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import { DM_Sans } from "next/font/google";
 import "./globals.css"
-
-import { Tooltip } from "@/src/app/(app)/components/ui/tooltip";
 import { TRPCReactProvider } from "@/src/trpc/client";
+import { Toaster } from "@/src/app/(app)/components/ui/sonner";
+
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -30,13 +30,17 @@ export default function RootLayout({
 }:Readonly<{
   children:React.ReactNode;
 }>) {
-  return (
+  return (  
     <html
       lang="en"
       className={`${dmSans.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          {children}
+          <Toaster/>
+        </TRPCReactProvider>
+        
       </body>
     </html>
   );

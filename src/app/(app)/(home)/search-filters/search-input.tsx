@@ -1,11 +1,14 @@
 "use client"
 
 import { Input } from "@/src/app/(app)/components/ui/input";
-import { ListFilterIcon, SearchIcon } from "lucide-react"
+import { BookmarkCheckIcon, ListFilterIcon, SearchIcon } from "lucide-react"
 // import { CustomCategory } from "../types";
 import { useState } from "react";
 import { Button } from "../../components/ui/button";
 import { CategoriesSidebar } from "./categories-sidebar";
+import { useTRPC } from "@/src/trpc/client";
+import {useQuery} from '@tanstack/react-query'
+import Link from "next/link";
 
 
 
@@ -21,6 +24,9 @@ export const SearchInput = ({
 
     const [isSidebarOpen,setIsSidebarOpen] = useState<boolean>(false);
     
+    const trpc = useTRPC();
+    const session = useQuery(trpc.auth.session.queryOptions());
+
 
 
     return (
@@ -37,6 +43,17 @@ export const SearchInput = ({
             >
                 <ListFilterIcon/>
             </Button>
+            
+            {session.data?.user &&(
+                <Button
+                variant='elevated'
+                >
+                    <Link href='/library'>
+                        <BookmarkCheckIcon/>
+                        Library
+                    </Link>
+                </Button>
+            )}
 
         </div>
     )
