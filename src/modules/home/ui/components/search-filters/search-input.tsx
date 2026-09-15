@@ -4,7 +4,7 @@ import { Input } from "@/src/app/(app)/components/ui/input";
 import { BookmarkCheckIcon, ListFilterIcon, SearchIcon } from "lucide-react"
 // import { CustomCategory } from "../types";
 import { useState } from "react";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../../../../app/(app)/components/ui/button";
 import { CategoriesSidebar } from "./categories-sidebar";
 import { useTRPC } from "@/src/trpc/client";
 import {useQuery} from '@tanstack/react-query'
@@ -48,7 +48,7 @@ export const SearchInput = ({
                 <Button
                 variant='elevated'
                 >
-                    <Link href='/library'>
+                    <Link href='/library'>  
                         <BookmarkCheckIcon/>
                         Library
                     </Link>

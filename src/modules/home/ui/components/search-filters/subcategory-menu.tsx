@@ -1,12 +1,13 @@
 import Link from "next/link";
 
 import { Category } from "@/payload-types";
-import { cn } from "../../lib/utils";
-import { CustomCategory } from "../types";
+import { cn } from "../../../../../app/(app)/lib/utils";
+import { CustomCategory } from "../../../../../app/(app)/(home)/types";
+import { CategoriesGetManyOutput } from "@/src/modules/types";
 
 
 interface Props{
-    category:CustomCategory,
+    category:CategoriesGetManyOutput[1],
     isOpen:boolean,
     position:{top:number,left:number}
 }
@@ -46,7 +47,7 @@ export const SubcategoryMenu = ({
                     key={subcategory.slug} 
                     href={`/${category.slug}/${subcategory.slug}`}
                     className={cn("w-full text-left p-4 hover:bg-black hover:text-white justify-between",
-                        "items-center font-medium underline")}
+                        "flex items-center font-medium underline")}
                     >{subcategory.name}</Link>
                 ))}
             </div>

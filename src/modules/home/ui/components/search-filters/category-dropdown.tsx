@@ -4,10 +4,10 @@ import { Categories } from "@/src/collections/Categories";
 import Link from "next/link"
 
 import { Category } from "@/payload-types";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../../../../app/(app)/components/ui/button";
 
-import { CustomCategory } from "../types";
-import { cn } from "../../lib/utils";
+import { CustomCategory } from "../../../../../app/(app)/(home)/types";
+import { cn } from "../../../../../app/(app)/lib/utils";
 
 import { useRef, useState } from "react";
 import { useDropdownPosition } from "./use-dropdown-position";
@@ -51,7 +51,7 @@ export const CategoryDropdown = ({
                 className={cn("h-11 px-4 bg-transparent border-transparent rounded-full hover:bg-white",
                     "hover:border-primary text-black",isActive&&!isNavigationHovered && "bg-white border-primary")}
                 >                
-                    {category.name} fdsaf
+                    {category.name}
                 </Button>
             </div>
 

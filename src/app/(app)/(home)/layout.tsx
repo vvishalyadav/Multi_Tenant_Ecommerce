@@ -1,9 +1,9 @@
 import { nav } from "framer-motion/client"
 import React from "react";
-import Navbar from "./Navbar";
+import Navbar from "../../../modules/home/ui/components/Navbar";
 import configPromise from '@payload-config'
 import { getPayload } from "payload";
-import { SearchFilter, SearchFiltersSkeleton } from "./search-filters";
+import { SearchFilter, SearchFiltersSkeleton } from "../../../modules/home/ui/components/search-filters";
 import { Category } from "@/payload-types";
 import { CustomCategory } from "./types";
 import {dehydrate ,HydrationBoundary, QueryClient} from "@tanstack/react-query";

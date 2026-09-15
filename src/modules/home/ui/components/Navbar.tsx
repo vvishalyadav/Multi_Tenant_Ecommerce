@@ -44,7 +44,7 @@ const NavbarItem = ({href,children,isActive}:NavbarItemProps)=>{
     )
 
 }
-
+    
 const Navbar = ()=>{
     const pathname = usePathname();
 
@@ -72,7 +72,8 @@ const Navbar = ()=>{
             {session.data?.user? (
                 <Button
                  className={cn("border-l border-t-0 border-b-0 border-r-0 px-12 h-full rounded-none",
-                    "bg-black text-white hover:bg-pink-400 hover:text-black transition-colors text-lg"
+                    "bg-black text-white hover:bg-pink-400 hover:text-black transition-colors text-lg",
+                    "hidden lg:block"
                  )}
                 >
                     <Link href='/admin'>

@@ -1,9 +1,9 @@
 import { useRouter } from "next/navigation";
-import { CustomCategory } from "../types";
+import { CustomCategory } from "../../../../../app/(app)/(home)/types";
 import { useState } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../../components/ui/sheet";
-import { ScrollArea } from "../../components/ui/scroll-area";
-import { Button } from "../../components/ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "../../../../../app/(app)/components/ui/sheet";
+import { ScrollArea } from "../../../../../app/(app)/components/ui/scroll-area";
+import { Button } from "../../../../../app/(app)/components/ui/button";
 import { ChevronLeftIcon, ChevronsRightIcon } from "lucide-react";
 import { useTRPC } from "@/src/trpc/client";
 import {useQuery} from "@tanstack/react-query"

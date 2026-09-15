@@ -4,15 +4,16 @@ import { Category } from "@/payload-types"
 
 
 
-import { Button } from "../../components/ui/button"
+import { Button } from "../../../../../app/(app)/components/ui/button"
 import Link from "next/link"
 import { CategoryDropdown } from "./category-dropdown"
-import { CustomCategory } from "../types"
+import { CustomCategory } from "../../../../../app/(app)/(home)/types"
 import { useEffect, useRef, useState } from "react"
 import { CategoriesSidebar } from "./categories-sidebar"
 import { ListFilterIcon } from "lucide-react"
-import { cn } from "../../lib/utils"
+import { cn } from "../../../../../app/(app)/lib/utils"
 import { CategoriesGetManyOutput } from "@/src/modules/types"
+import { useParams } from "next/navigation"
 
 
 interface Props{
@@ -31,7 +32,10 @@ export const Categories = ({
     const [isAnyHovered,setIsAnyHovered] = useState(false);
     const [isSidebarOpen,setIsSidebarOpen] = useState(false);
 
-    const activeCategory = "all";
+    const params = useParams();
+
+    const categoryParam = params.category as string | undefined;
+    const activeCategory = categoryParam || "all";   
 
     const activeCategoryIndex = data.findIndex((cat:CustomCategory)=>cat.slug === activeCategory);
     const isActiveCategoryHidden = activeCategoryIndex >= visibleCount && activeCategoryIndex !== -1;
@@ -115,6 +119,7 @@ export const Categories = ({
 
              <div ref={viewAllRef} className="shrink-0">
                 <Button
+                variant={"elevated"}
                 className={cn("h-11 px-4 bg-transparent rounded-full hover:bg-white hover:border-primary",
                     "text-black",
                     isActiveCategoryHidden && !isAnyHovered && "bg-white border-primary"
