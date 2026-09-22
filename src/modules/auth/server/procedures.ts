@@ -1,4 +1,3 @@
-
 import { baseProcedure, createTRPCRouter } from "@/src/trpc/init";
 import { TRPCError } from "@trpc/server";
 import { register } from "module";

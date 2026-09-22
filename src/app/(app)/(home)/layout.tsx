@@ -1,15 +1,15 @@
-import { nav } from "framer-motion/client"
-import React from "react";
-import Navbar from "../../../modules/home/ui/components/Navbar";
-import configPromise from '@payload-config'
-import { getPayload } from "payload";
-import { SearchFilter, SearchFiltersSkeleton } from "../../../modules/home/ui/components/search-filters";
-import { Category } from "@/payload-types";
-import { CustomCategory } from "./types";
-import {dehydrate ,HydrationBoundary, QueryClient} from "@tanstack/react-query";
-import {getQueryClient,trpc} from "@/src/trpc/server"
 import { Suspense } from "react";
-// import { CustomCategory } from "./types";
+import {dehydrate ,HydrationBoundary, QueryClient} from "@tanstack/react-query";
+
+import {getQueryClient,trpc} from "@/src/trpc/server";
+
+
+import Navbar from "../../../modules/home/ui/components/Navbar";
+
+import { SearchFilter, SearchFiltersSkeleton } from "../../../modules/home/ui/components/search-filters";
+
+
+
 
 
 interface Props{
@@ -58,8 +58,10 @@ const Layout = async ({children}:Props)=>{
           <SearchFilter/>
         </Suspense>
       </HydrationBoundary>
+      <div className="flex-1 bg-[#F4F4F0]">
+        {children}
+      </div>
       
-      {children}
       {/* <br/><br/>
       <div>data:{JSON.stringify(data,null,2)}<br/><br/></div>
       <div>Formatted Data: {JSON.stringify(formattedData,null,2)}</div> */}

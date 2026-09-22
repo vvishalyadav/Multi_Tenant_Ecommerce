@@ -32,6 +32,12 @@ export const Products:CollectionConfig = {
             relationTo:"media"
         },
         {
+            name:"tags",
+            type:"relationship",
+            relationTo:"tags",
+            hasMany:true
+        },
+        {
             name:"refundPolicy",
             type:"select",
             options:["30-days","14-days","7-days","1-day","no-refund"],
