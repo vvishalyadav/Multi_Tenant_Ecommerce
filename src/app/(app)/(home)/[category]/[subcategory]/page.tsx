@@ -1,4 +1,5 @@
 
+import { DEFAULT_LIMIT } from "@/src/constants";
 import { loadProductFilters } from "@/src/modules/products/search-params";
 import { ProductListView } from "@/src/modules/products/ui/views/product-list-view";
 import { getQueryClient, trpc } from "@/src/trpc/server";
@@ -20,10 +21,18 @@ const Page = async ({params, searchParams}:Props)=>{
     const filters = await loadProductFilters(searchParams);
 
     const queryClient = getQueryClient();
-    void queryClient.prefetchQuery(trpc.products.getMany.queryOptions({
-         category:subcategory,
-        ...filters, 
-    }));
+
+    void queryClient.prefetchInfiniteQuery(trpc.products.getMany.infiniteQueryOptions(
+        {
+            ...filters,
+            category:subcategory,
+            limit:DEFAULT_LIMIT
+        },
+        {
+            getNextPageParam: (lastPage) => lastPage.nextPage ?? undefined,
+        }
+    ));
+
 
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>

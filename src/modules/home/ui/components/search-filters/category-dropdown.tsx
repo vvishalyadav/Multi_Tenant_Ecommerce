@@ -10,7 +10,6 @@ import { CustomCategory } from "../../../../../app/(app)/(home)/types";
 import { cn } from "../../../../../app/(app)/lib/utils";
 
 import { useRef, useState } from "react";
-import { useDropdownPosition } from "./use-dropdown-position";
 
 import { SubcategoryMenu } from "./subcategory-menu";
 import { CategoriesGetManyOutput } from "@/src/modules/types";
@@ -31,8 +30,6 @@ export const CategoryDropdown = ({
 
     const dropdownRef = useRef<HTMLDivElement>(null);
 
-    const {getDropdownPosition} = useDropdownPosition(dropdownRef);
-
     const onMouseEnter = ()=>{
         if(category.subcategories){
             setIsOpen(true);
@@ -40,8 +37,6 @@ export const CategoryDropdown = ({
     }
 
     const onMouseLeave = ()=>setIsOpen(false);
-
-    const dropdownPosition = getDropdownPosition();
 
     return (
         <div className="relative" ref={dropdownRef} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
@@ -64,7 +59,7 @@ export const CategoryDropdown = ({
           />
         )}
         <SubcategoryMenu 
-        isOpen={isOpen} position={dropdownPosition} category={category}
+        isOpen={isOpen} category={category}
         />
             {/* <div className="w-[200px] hidden z-100 flex flex-col border">
                 {category.subcategories?.map((subcategory)=>(

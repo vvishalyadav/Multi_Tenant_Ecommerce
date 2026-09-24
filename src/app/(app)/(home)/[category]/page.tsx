@@ -1,3 +1,4 @@
+import { DEFAULT_LIMIT } from "@/src/constants";
 import { loadProductFilters } from "@/src/modules/products/search-params";
 import { ProductFilters } from "@/src/modules/products/ui/components/product-filters";
 import { ProductList, ProductListSkeleton } from "@/src/modules/products/ui/components/product-list";
@@ -24,10 +25,16 @@ import { Suspense } from "react";
 
         const queryClient = getQueryClient();
 
-        void queryClient.prefetchQuery(trpc.products.getMany.queryOptions({
-            category,
+    void queryClient.prefetchInfiniteQuery(trpc.products.getMany.infiniteQueryOptions(
+        {
             ...filters,
-        }));
+            category,
+            limit:DEFAULT_LIMIT
+        },
+        {
+            getNextPageParam: (lastPage) => lastPage.nextPage ?? undefined,
+        }
+    ));
 
         return(
             <HydrationBoundary state={dehydrate(queryClient)}>
