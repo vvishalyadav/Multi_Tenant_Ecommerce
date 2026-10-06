@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@/src/app/(app)/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
 import { Children, useState } from "react"
 import { useProductFilters } from "../../hooks/use-product-filters";

@@ -1,6 +1,6 @@
 "use client"
 import {Poppins} from "next/font/google"
-import { cn } from "@/src/app/(app)/lib/utils";
+import { cn } from "@/src/lib/utils";
 import Link from "next/link";
 import { Button } from "@/src/app/(app)/components/ui/button";
 import { usePathname } from "next/navigation";

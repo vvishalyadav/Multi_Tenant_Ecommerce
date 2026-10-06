@@ -8,7 +8,7 @@ import {
   useMessageScrollerVisibility,
 } from "@shadcn/react/message-scroller"
 
-import { cn } from "@/src/app/(app)/lib/utils"
+import { cn } from "@/src/lib/utils"
 import { Button } from "@/src/app/(app)/components/ui/button"
 import { ArrowDownIcon } from "lucide-react"
 

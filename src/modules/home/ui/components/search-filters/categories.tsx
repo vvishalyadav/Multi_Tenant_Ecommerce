@@ -11,7 +11,7 @@ import { CustomCategory } from "../../../../../app/(app)/(home)/types"
 import { useEffect, useRef, useState } from "react"
 import { CategoriesSidebar } from "./categories-sidebar"
 import { ListFilterIcon } from "lucide-react"
-import { cn } from "../../../../../app/(app)/lib/utils"
+import { cn } from "../../../../../lib/utils"
 import { CategoriesGetManyOutput } from "@/src/modules/types"
 import { useParams } from "next/navigation"
 

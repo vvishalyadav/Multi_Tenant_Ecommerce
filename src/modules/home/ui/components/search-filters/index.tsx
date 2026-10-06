@@ -1,7 +1,7 @@
 "use client"
 
 import { h6, param } from "framer-motion/client"
-import { cn } from "../../../../../app/(app)/lib/utils"
+import { cn } from "../../../../../lib/utils"
 import { SearchIcon } from "lucide-react"
 import { SearchInput } from "./search-input"
 import { Categories } from "./categories"

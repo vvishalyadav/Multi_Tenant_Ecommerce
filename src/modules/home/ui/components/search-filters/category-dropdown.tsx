@@ -7,7 +7,7 @@ import { Category } from "@/payload-types";
 import { Button } from "../../../../../app/(app)/components/ui/button";
 
 import { CustomCategory } from "../../../../../app/(app)/(home)/types";
-import { cn } from "../../../../../app/(app)/lib/utils";
+import { cn } from "../../../../../lib/utils";
 
 import { useRef, useState } from "react";
 

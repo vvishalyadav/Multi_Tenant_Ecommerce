@@ -9,7 +9,7 @@ import z from 'zod';
 import { loginSchema } from '../../../schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import { cn } from '@/src/app/(app)/lib/utils';
+import { cn } from '@/src/lib/utils';
 import { Button } from '@/src/app/(app)/components/ui/button';
 import { Field, FieldError, FieldLabel } from '@/src/app/(app)/components/ui/field';
 import { Input } from '@/src/app/(app)/components/ui/input';

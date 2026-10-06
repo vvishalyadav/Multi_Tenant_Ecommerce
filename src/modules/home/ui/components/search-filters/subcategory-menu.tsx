@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Category } from "@/payload-types";
-import { cn } from "../../../../../app/(app)/lib/utils";
+import { cn } from "../../../../../lib/utils";
 import { CustomCategory } from "../../../../../app/(app)/(home)/types";
 import { CategoriesGetManyOutput } from "@/src/modules/types";
 

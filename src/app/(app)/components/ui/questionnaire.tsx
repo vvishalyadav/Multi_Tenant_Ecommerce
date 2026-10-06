@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Questionnaire as QuestionnairePrimitive } from "@shadcn/react/questionnaire"
 
-import { cn } from "@/src/app/(app)/lib/utils"
+import { cn } from "@/src/lib/utils"
 import { buttonVariants, type Button } from "@/src/app/(app)/components/ui/button"
 import { CheckIcon } from "lucide-react"
 

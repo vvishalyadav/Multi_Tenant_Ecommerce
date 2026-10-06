@@ -17,7 +17,7 @@ import
 } from '@/src/app/(app)/components/ui/field'
 import { registerSchema } from '../../../schemas';
 import Link from "next/link";
-import { cn } from "@/src/app/(app)/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { Button } from "@/src/app/(app)/components/ui/button";
 import { Input } from "@/src/app/(app)/components/ui/input";
 

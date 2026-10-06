@@ -1,7 +1,7 @@
 "use client"
 import { Button } from "@/src/app/(app)/components/ui/button";
 import { useProductFilters } from "../../hooks/use-product-filters";
-import { cn } from "@/src/app/(app)/lib/utils";
+import { cn } from "@/src/lib/utils";
 
 
 export const ProductSort = ()=>{
