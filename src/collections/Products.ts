@@ -37,6 +37,11 @@ export const Products:CollectionConfig = {
             relationTo:"tags",
             hasMany:true
         },
+        // {
+        //     name:"cover",
+        //     type:"upload",
+        //     relationTo:"media"
+        // },
         {
             name:"refundPolicy",
             type:"select",
