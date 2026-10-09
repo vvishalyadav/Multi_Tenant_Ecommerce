@@ -33,18 +33,18 @@ export const Tenants : CollectionConfig = {
             relationTo:"media",
         },
         {
-            name:"stripeAccountId",
+            name:"razorpayAccountId",
             type:"text",
-            required:true,
+            required:false,
             admin:{
-                readOnly:true,
+                readOnly:false,
             },
         },
         {
-            name:"stripeDetailsSubmitted",
+            name:"razorpayDetailsSubmitted",
             type:"checkbox",
             admin:{
-                readOnly:true,
+                readOnly:false,
                 description:"You cannot create products until you submit your Stripe details"
             },
         },

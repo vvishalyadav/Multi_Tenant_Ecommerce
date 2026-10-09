@@ -178,11 +178,11 @@ export interface Tenant {
    */
   slug: string;
   image?: (string | null) | Media;
-  stripeAccountId: string;
+  razorpayAccountId?: string | null;
   /**
    * You cannot create products until you submit your Stripe details
    */
-  stripeDetailsSubmitted?: boolean | null;
+  razorpayDetailsSubmitted?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -440,8 +440,8 @@ export interface TenantsSelect<T extends boolean = true> {
   name?: T;
   slug?: T;
   image?: T;
-  stripeAccountId?: T;
-  stripeDetailsSubmitted?: T;
+  razorpayAccountId?: T;
+  razorpayDetailsSubmitted?: T;
   updatedAt?: T;
   createdAt?: T;
 }

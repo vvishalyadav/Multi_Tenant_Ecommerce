@@ -4,6 +4,7 @@ import { Sort, Where } from "payload"
 import z, { input } from "zod"
 import {sortValues} from "../search-params"
 import { DEFAULT_LIMIT } from "@/src/constants";
+import { TRPCError } from "@trpc/server";
 
 
 export const productsRouter = createTRPCRouter({
@@ -19,6 +20,12 @@ export const productsRouter = createTRPCRouter({
                 id:input.id,
                 depth:2
             });
+
+            if(!product){
+                throw new TRPCError({
+                    code: "NOT_FOUND",
+                });
+            }
 
             return {
                 ...product,

@@ -2,7 +2,7 @@ import { formatCurrency, generateTenantURL } from "@/src/lib/utils";
 import { StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 
@@ -39,7 +39,7 @@ export const ProductCard = ({
     };  
 
     return (
-        <Link href={`${generateTenantURL(tenantSlug)}/products/${id}}`}>
+        <Link href={`${generateTenantURL(tenantSlug)}/products/${id}`}>
             <div className="hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-shadow border rounded-md bg-white overflow-hidden h-full flex flex-col">
                 <div className="relative aspect-square">
                     <Image 
